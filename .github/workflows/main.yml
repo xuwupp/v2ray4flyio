@@ -1,8 +1,9 @@
 name: Fly Deploy cd
-on: 
+on:
   push:
-  schedule:
-    - cron: '0 4 1 * *'
+    tags:
+      - 0.*
+  workflow_dispatch:
 env:
   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
   APP_NAME: ${{ secrets.APP_NAME }}
